@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/animated_gradient_background"
+    tools:context=".views.activities.HomeActivity">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/homeNotificationsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:background="@null"
+        android:src="@drawable/ic_notifications_white"
+        app:layout_constraintStart_toStartOf="@+id/homeMessageCard"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/notificationDot"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="@drawable/notification_red_dot"
+        app:layout_constraintEnd_toEndOf="@id/homeNotificationsBtn"
+        app:layout_constraintTop_toTopOf="@id/homeNotificationsBtn" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/homeProfileBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/ic_person_white"
+        app:layout_constraintEnd_toEndOf="@+id/homeMessageCard"
+        app:layout_constraintTop_toTopOf="@+id/homeNotificationsBtn" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/themeSwitchBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/homeMessageCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent=".50"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".90">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/homeMessageUserTagTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/droid_sans_arabic"
+                android:text="\@ranger13"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/homeDateTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/droid_sans_arabic"
+                android:text="2 ابريل 2020"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/homeMessageTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/droid_sans_arabic"
+                android:gravity="center"
+                android:lineSpacingExtra="3dp"
+                android:maxEms="12"
+                android:maxLength="100"
+                android:text="أنت لا تعرف قصتي، كم كان عمق مصيبتي، أو كم مرة تأذيت و كنت وحدي"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/homeMessageAuthorTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/droid_sans_arabic"
+                android:text="~ابن خلدون~"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/homeShareBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:drawableStart="@drawable/ic_share_grey"
+        android:elevation="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/homeLikeBtn"
+        app:layout_constraintEnd_toEndOf="@id/homeMessageCard"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toTopOf="@+id/homeLikeBtn" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/homeLikeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_margin="8dp"
+        android:button="@null"
+        android:checked="false"
+        android:drawableEnd="@drawable/heart_selector"
+        android:elevation="1dp"
+        android:gravity="end|center"
+        android:stateListAnimator="@animator/scale"
+        android:text="4"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/color_grey"
+        app:layout_constraintBottom_toBottomOf="@id/homeMessageCard"
+        app:layout_constraintEnd_toStartOf="@+id/homeShareBtn"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/navigateToTimeLineBtn"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:text="More Cards"
+        android:textAllCaps="false"
+        android:textColor="@color/color_grey"
+        app:backgroundTint="@color/color_white"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="@id/homeMessageCard"
+        app:layout_constraintStart_toStartOf="@id/homeMessageCard"
+        app:layout_constraintTop_toBottomOf="@id/homeMessageCard" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
